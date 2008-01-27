@@ -1,0 +1,66 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pxCore Static Library", "pxCore.vcproj", "{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleExample", ".\Simple\Simple.vcproj", "{4A2394A6-AE51-40D4-AEBC-E553670A58F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0} = {8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KeyboardAndMouseExample", ".\KeyboardAndMouse\KeyboardAndMouse.vcproj", "{4A2394A6-AE51-40D4-AEBC-E553670A58F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0} = {8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AnimationExample", ".\Animation\Animation.vcproj", "{4A2394A6-AE51-40D4-AEBC-E553670A58F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0} = {8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MandelbrotExample", ".\Mandelbrot\Mandelbrot.vcproj", "{4A2394A6-AE51-40D4-AEBC-E553670A58F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0} = {8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimerExample", ".\Timer\Timer.vcproj", "{4A2394A6-AE51-40D4-AEBC-E553670A58F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0} = {8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}.Debug.ActiveCfg = Debug|Win32
+		{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}.Debug.Build.0 = Debug|Win32
+		{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}.Release.ActiveCfg = Release|Win32
+		{8197EB44-21BA-49E7-95DD-DDB4FF8CC6C0}.Release.Build.0 = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.ActiveCfg = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.Build.0 = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.ActiveCfg = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.Build.0 = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.ActiveCfg = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.Build.0 = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.ActiveCfg = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.Build.0 = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.ActiveCfg = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.Build.0 = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.ActiveCfg = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.Build.0 = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.ActiveCfg = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.Build.0 = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.ActiveCfg = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.Build.0 = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.ActiveCfg = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Debug.Build.0 = Debug|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.ActiveCfg = Release|Win32
+		{4A2394A6-AE51-40D4-AEBC-E553670A58F7}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

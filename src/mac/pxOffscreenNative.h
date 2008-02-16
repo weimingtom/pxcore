@@ -7,8 +7,6 @@
 
 #include "../pxBuffer.h"
 
-typedef PixMapHandle pxSurfaceNative;
-
 class pxOffscreenNative: public pxBuffer
 {
 public:

@@ -8,6 +8,7 @@
 #define PX_LITTLEENDIAN_PIXELS
 
 #ifndef PX_NATIVE
+#include "pxBufferNative.h"
 #include "pxOffscreenNative.h"
 #include "pxWindowNative.h"
 #endif

@@ -12,16 +12,6 @@
 #include <X11/Xutil.h>
 #include <X11/keysymdef.h>
 
-// Structure used to describe a window surface under X11
-typedef struct
-{
-    Display* display;
-    Drawable drawable;
-    GC gc;
-} pxSurfaceNativeDesc;
-
-typedef pxSurfaceNativeDesc* pxSurfaceNative;
-
 class pxOffscreenNative: public pxBuffer
 {
 public:

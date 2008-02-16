@@ -11,6 +11,13 @@
 
 pxError pxOffscreen::init(int width, int height)
 {
+    // Optimization
+    if (bitmap)
+    {
+        if (width == pxBuffer::width() && height == pxBuffer::height())
+            return PX_OK;
+    }
+
     term();  // release all resources if this object is reinitialized
 
     void *base;
@@ -18,7 +25,6 @@ pxError pxOffscreen::init(int width, int height)
     
     bitmap = CreateDIBSection(NULL, (BITMAPINFO*)&bmpInfo, DIB_RGB_COLORS, 
                                 (void **)&base, NULL, NULL);
-
     
     setBase(base);
     setWidth(width);
@@ -40,18 +46,3 @@ pxError pxOffscreen::term()
 	return PX_OK;
 }
 
-void pxOffscreen::blit(pxSurfaceNative s, int dstLeft, int dstTop, int width, int height, 
-    int srcLeft, int srcTop)
-{
-    HDC screenDC = ::GetWindowDC(NULL);
-    HDC drawingDC = ::CreateCompatibleDC(screenDC);
-    HGDIOBJ oldBM = SelectObject(drawingDC, bitmap);
-
-    
-    ::BitBlt(s, dstLeft, dstTop, width, height, drawingDC, srcLeft, srcTop,
-            SRCCOPY);
-
-    SelectObject(drawingDC, oldBM);
-    DeleteDC(drawingDC);
-    ReleaseDC(NULL, screenDC);
-}

@@ -35,10 +35,13 @@ clean:
 lib:
 	cd src; make -f Makefile.x11
 
-examples: Simple Mandelbrot Animation KeyboardAndMouse Timer
+examples: Simple Mandelbrot Animation KeyboardAndMouse Timer NativeDrawing
 
 Simple:
 	cd examples/Simple; make -f Makefile.x11
+
+NativeDrawing:
+	cd examples/NativeDrawing; make -f Makefile.x11
 
 Mandelbrot:
 	cd examples/Mandelbrot; make -f Makefile.x11

@@ -10,8 +10,6 @@
 #include "../pxCore.h"
 #include "../pxBuffer.h"
 
-typedef HDC pxSurfaceNative;
-
 class pxOffscreenNative: public pxBuffer
 {
 public:

@@ -9,8 +9,9 @@
 
 typedef int pxError;
 
-#define PX_OK 0
-#define PX_FAIL 1
+#define PX_OK                   0
+#define PX_FAIL                 1           // General Failure
+#define PX_NOTINITILIZED        2           // Object requires initialization before use
 
 // Utility Functions
 

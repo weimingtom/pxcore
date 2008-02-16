@@ -40,12 +40,4 @@ pxError pxOffscreen::term()
 	return PX_OK;
 }
 
-void pxOffscreen::blit(pxSurfaceNative s, int dstLeft, int dstTop, int width, int height, 
-    int srcLeft, int srcTop)
-{
-	Rect dr, sr;
-	
-	MacSetRect(&dr, dstLeft, dstTop, dstLeft + width, dstTop + height);
-	MacSetRect(&sr, srcLeft, srcTop, srcLeft + width, srcTop + height);
-	CopyBits((BitMapPtr)*GetGWorldPixMap(gworld),(BitMapPtr)*s,&sr,&dr,srcCopy,NULL);
-}
+

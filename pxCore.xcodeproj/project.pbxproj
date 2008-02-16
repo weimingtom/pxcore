@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		903EBE920CC968EF003C29FE /* ApplicationServices in Frameworks */ = {isa = PBXBuildFile; fileRef = 903EBE910CC968EF003C29FE /* ApplicationServices */; };
 		903EBE940CC96909003C29FE /* CoreServices in Frameworks */ = {isa = PBXBuildFile; fileRef = 903EBE930CC96909003C29FE /* CoreServices */; };
+		905F415F0D662A8300E15CE0 /* pxBufferNative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 905F415D0D662A8300E15CE0 /* pxBufferNative.cpp */; };
+		905F41600D662A8300E15CE0 /* pxBufferNative.h in Headers */ = {isa = PBXBuildFile; fileRef = 905F415E0D662A8300E15CE0 /* pxBufferNative.h */; };
+		905F41A10D66301200E15CE0 /* NativeDrawing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 905F41A00D66301200E15CE0 /* NativeDrawing.cpp */; };
+		905F41A60D66305900E15CE0 /* libpxCore Static Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DAAE800CC963F400D12854 /* libpxCore Static Library.a */; };
+		905F41A70D66306600E15CE0 /* Carbon in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C98E270CC9685300FD8D08 /* Carbon */; };
+		905F41A80D66306800E15CE0 /* ApplicationServices in Frameworks */ = {isa = PBXBuildFile; fileRef = 903EBE910CC968EF003C29FE /* ApplicationServices */; };
+		905F41A90D66306A00E15CE0 /* CoreServices in Frameworks */ = {isa = PBXBuildFile; fileRef = 903EBE930CC96909003C29FE /* CoreServices */; };
 		90C98E280CC9685300FD8D08 /* Carbon in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C98E270CC9685300FD8D08 /* Carbon */; };
 		90CE88E90CCB30F8009442AC /* libpxCore Static Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DAAE800CC963F400D12854 /* libpxCore Static Library.a */; };
 		90CE88EA0CCB30FD009442AC /* libpxCore Static Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DAAE800CC963F400D12854 /* libpxCore Static Library.a */; };
@@ -40,6 +47,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		905F41A20D66302300E15CE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90DCA5610CC76A1700AF146D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90DAAE7F0CC963F400D12854;
+			remoteInfo = "pxCore Static Library";
+		};
 		90C50F8F0CD4D9C0001BCD5A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 90DCA5610CC76A1700AF146D /* Project object */;
@@ -83,6 +97,11 @@
 		90311FE10CD9894700E5663C /* pxConfigNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pxConfigNative.h; path = src/mac/pxConfigNative.h; sourceTree = "<group>"; };
 		903EBE910CC968EF003C29FE /* ApplicationServices */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = ApplicationServices; path = /System/Library/Frameworks/ApplicationServices.framework/ApplicationServices; sourceTree = "<absolute>"; };
 		903EBE930CC96909003C29FE /* CoreServices */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = CoreServices; path = /System/Library/Frameworks/CoreServices.framework/CoreServices; sourceTree = "<absolute>"; };
+		905F415D0D662A8300E15CE0 /* pxBufferNative.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = pxBufferNative.cpp; path = src/mac/pxBufferNative.cpp; sourceTree = "<group>"; };
+		905F415E0D662A8300E15CE0 /* pxBufferNative.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = pxBufferNative.h; path = src/mac/pxBufferNative.h; sourceTree = "<group>"; };
+		905F419A0D662FD800E15CE0 /* NativeDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		905F419C0D662FD800E15CE0 /* NativeDrawing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "NativeDrawing-Info.plist"; sourceTree = "<group>"; };
+		905F41A00D66301200E15CE0 /* NativeDrawing.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = NativeDrawing.cpp; path = examples/NativeDrawing/NativeDrawing.cpp; sourceTree = "<group>"; };
 		907A309C0CD54DED0029F94A /* pxConfig.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = pxConfig.h; path = src/pxConfig.h; sourceTree = "<group>"; };
 		907A309D0CD54DED0029F94A /* pxCore.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = pxCore.h; path = src/pxCore.h; sourceTree = "<group>"; };
 		907A309E0CD54DED0029F94A /* pxBuffer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = pxBuffer.h; path = src/pxBuffer.h; sourceTree = "<group>"; };
@@ -116,6 +135,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		905F41980D662FD800E15CE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				905F41A90D66306A00E15CE0 /* CoreServices in Frameworks */,
+				905F41A80D66306800E15CE0 /* ApplicationServices in Frameworks */,
+				905F41A70D66306600E15CE0 /* Carbon in Frameworks */,
+				905F41A60D66305900E15CE0 /* libpxCore Static Library.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90CE88D00CCB3069009442AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,6 +219,7 @@
 				90DAAE9E0CC964D700D12854 /* Simple.cpp */,
 				90CE8AB40CCE00C5009442AC /* Mandelbrot.cpp */,
 				90CE8AB60CCE00ED009442AC /* Animation.cpp */,
+				905F41A00D66301200E15CE0 /* NativeDrawing.cpp */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -214,6 +245,8 @@
 		907A30A70CD54E0B0029F94A /* Native */ = {
 			isa = PBXGroup;
 			children = (
+				905F415D0D662A8300E15CE0 /* pxBufferNative.cpp */,
+				905F415E0D662A8300E15CE0 /* pxBufferNative.h */,
 				90311FE10CD9894700E5663C /* pxConfigNative.h */,
 				9018E9010CD7067F0019855C /* pxWindowNative.h */,
 				9018E9000CD7067A0019855C /* pxOffscreenNative.h */,
@@ -234,6 +267,7 @@
 				90CE8A860CCDFF4B009442AC /* Animation Example.app */,
 				90CE8A900CCDFFA0009442AC /* Mandelbrot.app */,
 				90CE8A990CCE0036009442AC /* Timer Example */,
+				905F419A0D662FD800E15CE0 /* NativeDrawing.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,6 +285,7 @@
 				90CE88D40CCB3069009442AC /* KeyboardAndMouse Example-Info.plist */,
 				90CE8A880CCDFF4B009442AC /* Animation Example-Info.plist */,
 				90CE8A920CCDFFA0009442AC /* Mandelbrot-Info.plist */,
+				905F419C0D662FD800E15CE0 /* NativeDrawing-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,12 +296,31 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				905F41600D662A8300E15CE0 /* pxBufferNative.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		905F41990D662FD800E15CE0 /* NativeDrawing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 905F419D0D662FD900E15CE0 /* Build configuration list for PBXNativeTarget "NativeDrawing" */;
+			buildPhases = (
+				905F41960D662FD800E15CE0 /* Resources */,
+				905F41970D662FD800E15CE0 /* Sources */,
+				905F41980D662FD800E15CE0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				905F41A30D66302300E15CE0 /* PBXTargetDependency */,
+			);
+			name = NativeDrawing;
+			productName = NativeDrawing;
+			productReference = 905F419A0D662FD800E15CE0 /* NativeDrawing.app */;
+			productType = "com.apple.product-type.application";
+		};
 		90CE88D10CCB3069009442AC /* KeyboardAndMouse Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90CE88D50CCB306A009442AC /* Build configuration list for PBXNativeTarget "KeyboardAndMouse Example" */;
@@ -390,11 +444,19 @@
 				90CE8A850CCDFF4B009442AC /* Animation Example */,
 				90CE8A8F0CCDFFA0009442AC /* Mandelbrot */,
 				90CE8A980CCE0036009442AC /* Timer Example */,
+				905F41990D662FD800E15CE0 /* NativeDrawing */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		905F41960D662FD800E15CE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90CE88CE0CCB3069009442AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,6 +488,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		905F41970D662FD800E15CE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				905F41A10D66301200E15CE0 /* NativeDrawing.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90CE88CF0CCB3069009442AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,6 +537,7 @@
 				90DAAE8B0CC9644900D12854 /* pxOffscreenNative.cpp in Sources */,
 				90DAAE8C0CC9644900D12854 /* pxWindowNative.cpp in Sources */,
 				90DAAE8E0CC9648100D12854 /* pxTimerNative.cpp in Sources */,
+				905F415F0D662A8300E15CE0 /* pxBufferNative.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +552,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		905F41A30D66302300E15CE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90DAAE7F0CC963F400D12854 /* pxCore Static Library */;
+			targetProxy = 905F41A20D66302300E15CE0 /* PBXContainerItemProxy */;
+		};
 		90C50F900CD4D9C0001BCD5A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 90DAAE7F0CC963F400D12854 /* pxCore Static Library */;
@@ -509,6 +585,70 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		905F419E0D662FD900E15CE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INFOPLIST_FILE = "NativeDrawing-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_3)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_3 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework\"";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = NativeDrawing;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		905F419F0D662FD900E15CE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INFOPLIST_FILE = "NativeDrawing-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_3)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_3 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework\"";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = NativeDrawing;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		90CE88D60CCB306A009442AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -916,6 +1056,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		905F419D0D662FD900E15CE0 /* Build configuration list for PBXNativeTarget "NativeDrawing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				905F419E0D662FD900E15CE0 /* Debug */,
+				905F419F0D662FD900E15CE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		90CE88D50CCB306A009442AC /* Build configuration list for PBXNativeTarget "KeyboardAndMouse Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

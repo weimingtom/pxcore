@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="pxCore Static Library"
-	ProjectGUID="{FE337866-9196-429A-85D7-ECE04A4325AE}"
-	RootNamespace="pxCore Static Library"
+	Name="NativeDrawing"
+	ProjectGUID="{21DCA4A4-507D-4B80-BC77-325DA18E31B7}"
+	RootNamespace="NativeDrawing"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -19,7 +19,7 @@
 			Name="Debug|Pocket PC 2003 (ARMV4)"
 			OutputDirectory="..\..\build\$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="..\..\temp\$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="4"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -41,10 +41,10 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;DEBUG;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE;PX_PLATFORM_WIN"
+				AdditionalIncludeDirectories="..\..\src"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;DEBUG;_WINDOWS;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE;;PX_PLATFORM_WIN"
 				MinimalRebuild="true"
 				RuntimeLibrary="1"
-				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="3"
@@ -62,9 +62,18 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM"
-				OutputFile="$(OutDir)/pxCore.lib"
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM /ARMPADCODE"
+				AdditionalDependencies="aygshell.lib pxCore.lib"
+				OutputFile="$(OutDir)/NativeDrawing.exe"
+				LinkIncremental="2"
+				AdditionalLibraryDirectories="..\..\build\$(PlatformName)\$(ConfigurationName)"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/NativeDrawing.pdb"
+				SubSystem="0"
+				StackReserveSize="65536"
+				StackCommitSize="4096"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -93,8 +102,8 @@
 		<Configuration
 			Name="Release|Pocket PC 2003 (ARMV4)"
 			OutputDirectory="..\..\build\$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="4"
+			IntermediateDirectory="..\..\temp\$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -116,9 +125,9 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="2"
-				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE;PX_PLATFORM_WIN"
+				AdditionalIncludeDirectories="..\..\src"
+				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_WINDOWS;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE;PX_PLATFORM_WIN"
 				RuntimeLibrary="0"
-				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="3"
@@ -136,9 +145,20 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM"
-				OutputFile="$(OutDir)/pxCore.lib"
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM /ARMPADCODE"
+				AdditionalDependencies="aygshell.lib pxCore.lib"
+				OutputFile="$(OutDir)/NativeDrawing.exe"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="..\..\build\$(PlatformName)\$(ConfigurationName)"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/NativeDrawing.pdb"
+				SubSystem="0"
+				StackReserveSize="65536"
+				StackCommitSize="4096"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -168,106 +188,8 @@
 	<References>
 	</References>
 	<Files>
-		<Filter
-			Name="Source Files"
-			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
-			>
-			<File
-				RelativePath="..\..\src\win\pxBufferNative.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\win\pxEventLoopNative.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxOffscreen.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\win\pxOffscreenNative.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\win\pxTimerNative.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\win\pxWindowNative.cpp"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="Header Files"
-			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
-			>
-			<File
-				RelativePath="..\..\src\pxBuffer.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\win\pxBufferNative.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxColors.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxConfig.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\win\pxConfigNative.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxCore.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxEventLoop.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxOffscreen.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\win\pxOffscreenNative.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxPixels.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxRect.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxTimer.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\pxWindow.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\win\pxWindowNative.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
-			>
-		</Filter>
 		<File
-			RelativePath=".\ReadMe.txt"
+			RelativePath="..\..\examples\NativeDrawing\NativeDrawing.cpp"
 			>
 		</File>
 	</Files>

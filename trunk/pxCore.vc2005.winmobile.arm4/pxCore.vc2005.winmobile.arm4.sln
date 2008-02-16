@@ -28,6 +28,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Timer", "Timer\Timer.vcproj
 		{FE337866-9196-429A-85D7-ECE04A4325AE} = {FE337866-9196-429A-85D7-ECE04A4325AE}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeDrawing", "NativeDrawing\NativeDrawing.vcproj", "{21DCA4A4-507D-4B80-BC77-325DA18E31B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Pocket PC 2003 (ARMV4) = Debug|Pocket PC 2003 (ARMV4)
@@ -70,6 +72,12 @@ Global
 		{22315CC2-8668-496E-8068-76293297D57C}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Pocket PC 2003 (ARMV4)
 		{22315CC2-8668-496E-8068-76293297D57C}.Release|Pocket PC 2003 (ARMV4).Build.0 = Release|Pocket PC 2003 (ARMV4)
 		{22315CC2-8668-496E-8068-76293297D57C}.Release|Pocket PC 2003 (ARMV4).Deploy.0 = Release|Pocket PC 2003 (ARMV4)
+		{21DCA4A4-507D-4B80-BC77-325DA18E31B7}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|Pocket PC 2003 (ARMV4)
+		{21DCA4A4-507D-4B80-BC77-325DA18E31B7}.Debug|Pocket PC 2003 (ARMV4).Build.0 = Debug|Pocket PC 2003 (ARMV4)
+		{21DCA4A4-507D-4B80-BC77-325DA18E31B7}.Debug|Pocket PC 2003 (ARMV4).Deploy.0 = Debug|Pocket PC 2003 (ARMV4)
+		{21DCA4A4-507D-4B80-BC77-325DA18E31B7}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Pocket PC 2003 (ARMV4)
+		{21DCA4A4-507D-4B80-BC77-325DA18E31B7}.Release|Pocket PC 2003 (ARMV4).Build.0 = Release|Pocket PC 2003 (ARMV4)
+		{21DCA4A4-507D-4B80-BC77-325DA18E31B7}.Release|Pocket PC 2003 (ARMV4).Deploy.0 = Release|Pocket PC 2003 (ARMV4)
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

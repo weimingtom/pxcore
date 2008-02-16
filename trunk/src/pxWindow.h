@@ -32,6 +32,11 @@ public:
 	// zero disables
     pxError setAnimationFPS(long fps);
 
+    // obtain a pxSurfaceNative to perform platform native
+    // drawing to a window outside of the onDraw event
+    pxError beginNativeDrawing(pxSurfaceNative& s);
+    pxError endNativeDrawing(pxSurfaceNative& s);
+
 protected:
 
     // Overrideable event methods

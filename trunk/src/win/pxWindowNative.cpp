@@ -35,7 +35,7 @@ pxError pxWindow::init(int left, int top, int width, int height)
 	wc.cbWndExtra    = 0;
 	wc.hInstance     = hInstance;
 	wc.hIcon         = NULL;
-	wc.hCursor       = 0;
+	wc.hCursor       = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH) GetStockObject(WHITE_BRUSH);
 	wc.lpszMenuName  = 0;
 	wc.lpszClassName = className;
@@ -108,7 +108,27 @@ void pxWindow::setTitle(char* title)
     ::SetWindowText(mWindow, A2T(title));
 }
 
+pxError pxWindow::beginNativeDrawing(pxSurfaceNative& s)
+{
+    s = ::GetDC(mWindow);
+    return s?PX_OK:PX_FAIL;
+}
+
+pxError pxWindow::endNativeDrawing(pxSurfaceNative& s)
+{
+    ::ReleaseDC(mWindow, s);
+    return PX_OK;
+}
+
 // pxWindowNative
+
+void pxWindowNative::sendSynchronizedMessage(char* messageName, void *p1)
+{
+    synchronizedMessage m;
+    m.messageName = messageName;
+    m.p1 = p1;
+    ::SendMessage(mWindow, WM_USER, 0, (LPARAM)&m);
+}
 
 LRESULT __stdcall pxWindowNative::windowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -259,6 +279,12 @@ LRESULT __stdcall pxWindowNative::windowProc(HWND hWnd, UINT msg, WPARAM wParam,
             break;
         case WM_ERASEBKGND:
             return 0;
+            break;
+        case WM_USER:
+            {
+                synchronizedMessage *m = (synchronizedMessage*)lParam;
+                w->onSynchronizedMessage(m->messageName, m->p1);
+            }
             break;
         }
     }

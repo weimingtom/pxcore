@@ -169,6 +169,18 @@ void pxWindow::setTitle(char* title)
 	SetWindowTitleWithCFString(mWindowRef,CFStringCreateWithCString(nil,title,kCFStringEncodingASCII));
 }
 
+pxError pxWindow::beginNativeDrawing(pxSurfaceNative& s)
+{
+	s = GetWindowPort(this->mWindowRef);
+	return PX_OK;
+}
+
+pxError pxWindow::endNativeDrawing(pxSurfaceNative& s)
+{
+	// Don't need to do anything
+	return PX_OK;
+}
+
 // pxWindowNative
 
 pascal OSStatus pxWindowNative::doKeyDown (EventHandlerCallRef nextHandler, EventRef theEvent, void* userData)
@@ -181,7 +193,6 @@ pascal OSStatus pxWindowNative::doKeyDown (EventHandlerCallRef nextHandler, Even
 	
 	UInt32 kc;
 	GetEventParameter (theEvent, kEventParamKeyCode, typeUInt32, NULL, sizeof(UInt32), NULL, &kc);
-//	printf("VK DN: %lx\n", kc);
 
 	if (kc == 0x24) kc = 0x4c;
 	
@@ -256,9 +267,10 @@ pascal OSStatus pxWindowNative::doKeyModifierChanged (EventHandlerCallRef nextHa
 pascal OSStatus pxWindowNative::doWindowDrawContent (EventHandlerCallRef nextHandler, EventRef theEvent, void* userData)
 {
 	pxWindowNative* w = (pxWindowNative*)userData;
-	SetPort(GetWindowPort(w->mWindowRef));
-	w->onDraw(GetPortPixMap(GetWindowPort(w->mWindowRef)));
+	//SetPort(GetWindowPort(w->mWindowRef));
+	//w->onDraw(GetPortPixMap(GetWindowPort(w->mWindowRef)));
 
+	w->onDraw(GetWindowPort(w->mWindowRef));
 	return CallNextEventHandler (nextHandler, theEvent);
 }	
 

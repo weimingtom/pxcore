@@ -151,6 +151,25 @@ void pxWindow::setTitle(char* title)
     XSetIconName(d, win, title);
 }
 
+pxError pxWindow::beginNativeDrawing(pxSurfaceNative& s)
+{
+    s = (pxSurfaceNative)malloc(sizeof(pxSurfaceNativeDesc));
+    s->display = mDisplayRef.getDisplay();
+    s->drawable = win;
+    s->gc = XCreateGC(s->display, win, 0, NULL);
+
+    return PX_OK;
+}
+
+pxError pxWindow::endNativeDrawing(pxSurfaceNative& s)
+{
+    XFreeGC(s->display, s->gc);
+    free(s);
+    s = NULL;
+
+    return PX_OK;
+}
+
 // pxWindowNative
 
 void pxWindowNative::onAnimationTimerInternal()

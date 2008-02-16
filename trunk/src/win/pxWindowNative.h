@@ -15,6 +15,8 @@ public:
     pxWindowNative(): mWindow(NULL), mTimerId(NULL) {}
     virtual ~pxWindowNative() {}
 
+    void sendSynchronizedMessage(char* messageName, void* p1);
+
 protected:
     virtual void onCreate() = (0);
 
@@ -34,6 +36,9 @@ protected:
     virtual void onDraw(pxSurfaceNative surface) = (0);
 
     virtual void onAnimationTimer() = (0);
+
+    // Windows only for now
+    virtual void onSynchronizedMessage(char* messageName, void* p1) {}
 
     static LRESULT __stdcall windowProc(HWND hWnd, UINT msg, 
             WPARAM wParam, LPARAM lParam);
@@ -144,5 +149,11 @@ protected:
 #define PX_KEY_HELP         VK_HELP
 #define PX_KEY_BACKQUOTE    0xC0
 #define PX_KEY_QUOTE        0xDE
+
+typedef struct synchronizedMessage
+{
+    char* messageName;
+    void* p1;
+} synchronizedMessage;
 
 #endif

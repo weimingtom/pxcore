@@ -29,19 +29,15 @@ void pxEventLoop::exit()
 // Windows specific entrypoint
 
 // Used when /SUBSYSTEM:WINDOWS
-#ifdef UNICODE
 int CALLBACK WinMain(
   HINSTANCE hInstance,
   HINSTANCE hInstNULL,
-  LPWSTR lpszCmdLine,
-  int       nCmdShow)
+#ifdef UNDER_CE
+    LPWSTR lpCmdLine,
 #else
-int CALLBACK WinMain(
-  HINSTANCE hInstance,
-  HINSTANCE hInstNULL,
-  LPSTR lpszCmdLine,
-  int       nCmdShow)
+    LPSTR lpCmdLine,
 #endif
+  int       nCmdShow)
 {
 	pxMain();
 	return 0;

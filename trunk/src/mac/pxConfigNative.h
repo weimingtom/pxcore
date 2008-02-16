@@ -5,10 +5,9 @@
 #ifndef PX_CONFIGNATIVE_H
 #define PX_CONFIGNATIVE_H
 
-//#ifndef PX_NATIVE
+#include "mac/pxBufferNative.h"
 #include "mac/pxOffscreenNative.h"
 #include "mac/pxWindowNative.h"
-//#endif
 
 #endif
 

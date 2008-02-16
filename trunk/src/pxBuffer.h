@@ -66,19 +66,23 @@ public:
 
     void fill(const pxRect& r, const pxColor& color)
     {
-	for (int i = r.top(); i < r.bottom(); i++)
+        // calc clip
+        pxRect c = bounds();
+        c.intersect(r);
+
+	for (int i = c.top(); i < c.bottom(); i++)
 	{
-		pxPixel *p = pixel(r.left(), i);
-		for (int j = r.left(); j < r.right(); j++)
-		{
-			*p++ = color;
-		}
-	}
+    	     pxPixel *p = pixel(c.left(), i);
+             pxPixel *pe = p + c.width();
+             while (p < pe)
+	     {
+                 *p++ = color;
+	     }
+        }
     }
 
     void fill(const pxColor& color)
     {
-
 	for (int i = 0; i < height(); i++)
 	{
 		pxPixel *p = scanline(i);
@@ -91,15 +95,66 @@ public:
 
     void fillAlpha(unsigned char alpha)
     {
-	for (int i = 0; i < height(); i++)
-	{
-		pxPixel*p = scanline(i);
-		for (int j = 0; j < width(); j++)
-		{
-			p->a = alpha;
-			p++;
-		}
-	}
+	    for (int i = 0; i < height(); i++)
+	    {
+		    pxPixel*p = scanline(i);
+		    for (int j = 0; j < width(); j++)
+		    {
+			    p->a = alpha;
+			    p++;
+		    }
+	    }
+    }
+
+    void blit(pxSurfaceNative s, int dstLeft, int dstRight, 
+              int dstWidth, int dstHeight, 
+              int srcLeft, int srcRight,
+              int srcWidth, int srcHeight);
+    
+
+    inline void blit(pxSurfaceNative s, int dstLeft, int dstTop, 
+              int dstWidth, int dstHeight, 
+              int srcLeft, int srcRight)
+    {
+        blit(s, dstLeft, dstTop, dstWidth, dstHeight, srcLeft, srcRight, width(), height());
+    }
+
+    inline void blit(pxSurfaceNative s)
+    {
+        blit(s, 0, 0, width(), height(), 0, 0);
+    }
+    
+    inline void blit(pxBuffer& b, int dstLeft, int dstTop, 
+              int dstWidth, int dstHeight, 
+              int srcLeft, int srcTop)
+    {
+        pxRect srcBounds = bounds();
+        pxRect dstBounds = b.bounds();
+
+        pxRect srcRect(srcLeft, srcTop, srcLeft+dstWidth, srcTop+dstHeight);
+        pxRect dstRect(dstLeft, dstTop, dstLeft+dstWidth, dstTop+dstHeight);
+
+        srcBounds.intersect(srcRect);
+        dstBounds.intersect(dstRect);
+
+        int w = pxMin<int>(srcBounds.width(), dstBounds.width());
+        int h = pxMin<int>(srcBounds.height(), dstBounds.height());
+
+        for (int y = 0; y < h; y++)
+        {
+            pxPixel *s = scanline(y+srcBounds.top());
+            pxPixel *se = s + w;
+            pxPixel *d = b.scanline(y+dstBounds.top());
+            while(s < se)
+            {
+                *d++ = *s++;
+            }
+        }
+    }
+
+    inline void blit(pxBuffer b)
+    {
+        blit(b, 0, 0, width(), height(), 0, 0);
     }
 
 protected:

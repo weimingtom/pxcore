@@ -10,6 +10,7 @@
 
 // Class used to create and manage offscreen pixmaps
 // This class subclasses pxBuffer (pxBuffer.h)
+// Please refer to pxBuffer.h for additional methods
 class pxOffscreen: public pxOffscreenNative
 {
 public:
@@ -27,14 +28,6 @@ public:
 
     pxError term();
 
-    void blit(pxSurfaceNative s, int dstLeft, int dstRight, 
-              int dstWidth, int dstHeight, 
-              int srcLeft, int srcRight);
-
-    inline void blit(pxSurfaceNative s)
-    {
-        blit(s, 0, 0, width(), height(), 0, 0);
-    }
 };
 
 #endif // PXOFFSCREEN_H

@@ -1,0 +1,5 @@
+Changes and Additions for pxCore 1.2 February 16th 2008
+
++ Added the ability to directly blit pxBuffer frame buffer descriptors.
++ Added beginNativeDrawing and endNativeDrawing to allow native drawing outside of the paint loop.
++ Added an example that demonstrates using platform native drawing methods in conjunction with the portable frame buffer primitives in pxCore.

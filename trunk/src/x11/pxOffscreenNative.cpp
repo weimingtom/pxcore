@@ -41,29 +41,5 @@ pxError pxOffscreenNative::term()
     return PX_OK;
 }
 
-void pxOffscreen::blit(pxSurfaceNative s, 
-                       int dstLeft, int dstTop, 
-                       int w, int h, 
-                       int srcLeft, int srcTop)
-{
-    XImage* image = ::XCreateImage(s->display, 
-				   XDefaultVisual(s->display, 
-						  XDefaultScreen(s->display)), 
-				   24,ZPixmap, 0, (char*)data, 
-				   width(), height(), 32, width() * 4);
-        
-    if (image)
-    {
-	::XPutImage(s->display, s->drawable, s->gc, image, srcLeft, srcTop, 
-		    dstLeft, dstTop, w, h);
-
-	// If we don't NULL this out XDestroyImage will damage
-	// the heap by trying to free it internally
-	image->data = NULL;
-	XDestroyImage(image);
-    }
-}
-
-
 
 
